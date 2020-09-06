@@ -11,7 +11,13 @@ import {
 function SingUp(props) {
   const { show, handleClose } = props;
   return (
-    <Modal centered backdrop="static" show={show} onHide={handleClose}>
+    <Modal
+      animation={false}
+      centered
+      backdrop="static"
+      show={show}
+      onHide={handleClose}
+    >
       <Modal.Header closeButton>
         <Modal.Title>Crear cuenta</Modal.Title>
       </Modal.Header>

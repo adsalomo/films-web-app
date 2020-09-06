@@ -9,6 +9,7 @@ import Gender from "./views/Gender";
 // Components
 import ModalSingUp from "./components/ModalSignUp";
 import ModalLogin from "./components/ModalLogin";
+import Movie from "./views/Movie";
 
 // Logo
 import Logo from "./assets/img/cuevana3.png";
@@ -33,6 +34,16 @@ export default function App() {
     setShowLogin(true);
   };
 
+  const handleSuccessLogin = (user) => {
+    localStorage.setItem("user", JSON.stringify(user));
+    setShowLogin(false);
+  };
+
+  const handleLogout = () => {
+    localStorage.clear();
+    window.location.reload(true);
+  };
+
   return (
     <Router>
       <Navbar expand="lg" className="navbar-custom">
@@ -42,35 +53,50 @@ export default function App() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse>
           <Nav className="mr-auto">
-            <Nav.Link>
-              <Link className="custom-link" to="/">
-                Inicio
+            <Link className="custom-link" to="/">
+              Inicio
+            </Link>
+            <Link className="custom-link" to="/gender">
+              Generos
+            </Link>
+            {localStorage.getItem("user") && (
+              <Link className="custom-link" to="/movie">
+                Peliculas
               </Link>
-            </Nav.Link>
-            <Nav.Link>
-              <Link className="custom-link" to="/gender">
-                Generos
-              </Link>
-            </Nav.Link>
+            )}
           </Nav>
           <Nav className="ml-auto">
-            <Nav.Link>
-              <Button
-                variant="link"
-                className="custom-link custom-button-link"
-                onClick={handleOpenModalLogin}
-              >
-                Entrar
-              </Button>
-            </Nav.Link>
-            <Nav.Link>
-              <Button
-                className="custom-button-registry"
-                onClick={handleOpenModalRegistry}
-              >
-                Registro
-              </Button>
-            </Nav.Link>
+            {!localStorage.getItem("user") && (
+              <Nav.Link>
+                <Button
+                  variant="link"
+                  className="custom-link custom-button-link"
+                  onClick={handleOpenModalLogin}
+                >
+                  Entrar
+                </Button>
+              </Nav.Link>
+            )}
+            {!localStorage.getItem("user") && (
+              <Nav.Link>
+                <Button
+                  className="custom-button-registry"
+                  onClick={handleOpenModalRegistry}
+                >
+                  Registro
+                </Button>
+              </Nav.Link>
+            )}
+            {localStorage.getItem("user") && (
+              <Nav.Link>
+                <Button
+                  className="custom-button-registry"
+                  onClick={handleLogout}
+                >
+                  Salir
+                </Button>
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
@@ -78,6 +104,7 @@ export default function App() {
       <Switch>
         <Route exact={true} path="/" component={Home} />
         <Route path="/gender" component={Gender} />
+        <Route path="/movie" component={Movie} />
       </Switch>
 
       {showRegistry && (
@@ -88,7 +115,11 @@ export default function App() {
       )}
 
       {showLogin && (
-        <ModalLogin handleClose={handleCloseModalLogin} show={showLogin} />
+        <ModalLogin
+          handleSuccessLogin={handleSuccessLogin}
+          handleClose={handleCloseModalLogin}
+          show={showLogin}
+        />
       )}
     </Router>
   );

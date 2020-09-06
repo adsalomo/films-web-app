@@ -1,0 +1,11 @@
+#080f28 -> fondo
+#141a32 -> menu
+#007bff -> botones
+#f9fafc -> color fondo text
+yarn add react-bootstrap
+yarn add bootstrap
+yarn add react-router-dom
+yarn add axios
+yarn add react-loader-spinner
+yarn add @material-ui/core
+yarn add @material-ui/icons

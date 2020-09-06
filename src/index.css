@@ -25,15 +25,16 @@ code {
 }
 
 .custom-button-registry {
-  background-color: #007bff;
   border-radius: 30px;
   padding-right: 20px;
   padding-left: 20px;
   padding-bottom: 8px;
 }
 
+/* ESTILOS A LOS LINKS */
 .custom-link {
   color: #ffffff;
+  margin: 5px;
 }
 
 .custom-link:hover {
@@ -48,7 +49,6 @@ code {
 
 /* Estilos modal registro */
 .custom-button {
-  background-color: #007bff;
   border-radius: 30px;
   padding: 13px;
 }
@@ -72,4 +72,19 @@ code {
 
 .modal-header {
   padding: 35px;
+}
+
+/* Contenido crear pelicula */
+.color-text {
+  color: #ffffff;
+}
+
+.custom-button-movie {
+  border-radius: 30px;
+  font-size: 16px;
+}
+
+.custom-form-control-date {
+  border-radius: 30px;
+  background-color: #f9fafc;
 }
