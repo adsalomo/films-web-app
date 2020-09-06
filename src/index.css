@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #080f28;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* color nav */
+.navbar-custom {
+  background-color: #141a32;
+}
+
+/* color blanco toggler */
+.navbar-light span.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  color: white;
+}
+
+.custom-button-registry {
+  background-color: #007bff;
+  border-radius: 30px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 8px;
+}
+
+.custom-link {
+  color: #ffffff;
+}
+
+.custom-link:hover {
+  color: #ffffff;
+}
+
+/* alineamos a la izquierda y bajamos para que quede alineado */
+.custom-button-link {
+  margin-top: 5px;
+  padding: 0px;
+}
+
+/* Estilos modal registro */
+.custom-button {
+  background-color: #007bff;
+  border-radius: 30px;
+  padding: 13px;
+}
+
+.custom-form-control {
+  border-radius: 30px;
+  padding: 23px;
+  background-color: #f9fafc;
+}
+
+.custom-form-label {
+  margin-left: 15px;
+}
+
+/* personalizamos la modal con los bordes */
+.modal-content {
+  -webkit-border-radius: 10px !important;
+  -moz-border-radius: 10px !important;
+  border-radius: 10px !important;
+}
+
+.modal-header {
+  padding: 35px;
+}
