@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Col, Button, Container } from "react-bootstrap";
+import { Row, Col, Button, Container, Table } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 import ModalMovie from "../components/ModalMovie";
 
@@ -25,16 +25,24 @@ function Movie(props) {
     );
   }
 
+  const user = JSON.parse(localStorage.getItem("user"));
+
   return (
-    <Container className="App container">
+    <Container className="App container custom-container">
       <Row>
         <Col lg={12}>
-          <h4 className="color-text">Mis peliculas</h4>
+          <h4 className="color-text">
+            Hola {user.name}, ¿Desear crear una nueva pelicula?
+          </h4>
         </Col>
       </Row>
       <Row>
         <Col lg={12}>
-          <Button className="custom-button-movie" onClick={handleOpenModal}>
+          <Button
+            block
+            className="custom-button-movie"
+            onClick={handleOpenModal}
+          >
             Nueva pelicula
           </Button>
         </Col>

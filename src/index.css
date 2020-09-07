@@ -24,13 +24,6 @@ code {
   color: white;
 }
 
-.custom-button-registry {
-  border-radius: 30px;
-  padding-right: 20px;
-  padding-left: 20px;
-  padding-bottom: 8px;
-}
-
 /* ESTILOS A LOS LINKS */
 .custom-link {
   color: #ffffff;
@@ -41,21 +34,15 @@ code {
   color: #ffffff;
 }
 
-/* alineamos a la izquierda y bajamos para que quede alineado */
-.custom-button-link {
-  margin-top: 5px;
-  padding: 0px;
-}
-
 /* Estilos modal registro */
 .custom-button {
   border-radius: 30px;
-  padding: 13px;
+  height: 50px;
 }
 
 .custom-form-control {
   border-radius: 30px;
-  padding: 23px;
+  height: 50px;
   background-color: #f9fafc;
 }
 
@@ -82,9 +69,15 @@ code {
 .custom-button-movie {
   border-radius: 30px;
   font-size: 16px;
+  height: 50px;
 }
 
-.custom-form-control-date {
-  border-radius: 30px;
-  background-color: #f9fafc;
+/* container de la pagina */
+.custom-container {
+  padding: 10px;
+}
+
+/* margin card */
+.custom-card {
+  margin-top: 20px;
 }

@@ -68,31 +68,21 @@ export default function App() {
           <Nav className="ml-auto">
             {!localStorage.getItem("user") && (
               <Nav.Link>
-                <Button
-                  variant="link"
-                  className="custom-link custom-button-link"
-                  onClick={handleOpenModalLogin}
-                >
+                <Button variant="primary" onClick={handleOpenModalLogin}>
                   Entrar
                 </Button>
               </Nav.Link>
             )}
             {!localStorage.getItem("user") && (
               <Nav.Link>
-                <Button
-                  className="custom-button-registry"
-                  onClick={handleOpenModalRegistry}
-                >
+                <Button variant="success" onClick={handleOpenModalRegistry}>
                   Registro
                 </Button>
               </Nav.Link>
             )}
             {localStorage.getItem("user") && (
               <Nav.Link>
-                <Button
-                  className="custom-button-registry"
-                  onClick={handleLogout}
-                >
+                <Button variant="danger" onClick={handleLogout}>
                   Salir
                 </Button>
               </Nav.Link>
