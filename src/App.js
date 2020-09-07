@@ -61,7 +61,7 @@ export default function App() {
             </Link>
             {localStorage.getItem("user") && (
               <Link className="custom-link" to="/movie">
-                Peliculas
+                Administración
               </Link>
             )}
           </Nav>
