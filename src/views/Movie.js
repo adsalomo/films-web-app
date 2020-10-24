@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Row, Col, Button, Container, Table } from "react-bootstrap";
+import { Row, Col, Button, Container } from "react-bootstrap";
 import { Redirect } from "react-router-dom";
 import ModalMovie from "../components/ModalMovie";
 

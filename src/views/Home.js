@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col, CardGroup } from "react-bootstrap";
+import { Container, CardGroup } from "react-bootstrap";
 // Servicio
 import MovieService from "../services/MovieService";
 // Card
