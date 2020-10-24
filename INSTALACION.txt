@@ -2,6 +2,9 @@
 #141a32 -> menu
 #007bff -> botones
 #f9fafc -> color fondo text
+instalar node js
+instalar yarn
+instalar expo cli -> yarn global add expo-cli (solo para react native)	
 yarn add react-bootstrap
 yarn add bootstrap
 yarn add react-router-dom

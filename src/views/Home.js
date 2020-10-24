@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, CardGroup } from "react-bootstrap";
 // Servicio
 import MovieService from "../services/MovieService";
 // Card
@@ -36,7 +36,7 @@ function Home() {
 
     return [...Array(rows)].map((row, key) => {
       return (
-        <Row key={key}>
+        <CardGroup>
           {movies
             .slice(
               key === 0 ? key : key * columns,
@@ -44,28 +44,12 @@ function Home() {
             )
             .map((movie, key) => {
               return (
-                <Col lg={3} key={key}>
-                  <Card
-                    movie={movie}
-                    handleRateMovie={handleRateMovie}
-                    handleDeleteMovie={handleDeleteMovie}
-                  />
-                </Col>
+                <Card movie={movie} handleDeleteMovie={handleDeleteMovie} />
               );
             })}
-        </Row>
+        </CardGroup>
       );
     });
-  };
-
-  const handleRateMovie = async (movie) => {
-    try {
-      await MovieService.rate(movie.movieId, movie);
-      handleGetMovies();
-    } catch (error) {
-      console.log(error);
-      alert("Error al calificar");
-    }
   };
 
   const handleDeleteMovie = async (id) => {
